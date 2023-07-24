@@ -9,12 +9,12 @@ def credentialProperty = new Properties()
 credentialProperty.load(new FileInputStream(credentialFile))
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.1"
+    compileSdk 30
 
     defaultConfig {
         applicationId "dev.shreyaspatil.celllocationfinder"
         minSdkVersion 21
+        //Not for Google Play - noinspection ExpiredTargetSdkVersion
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -37,6 +37,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    namespace 'dev.shreyaspatil.celllocationfinder'
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
